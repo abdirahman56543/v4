@@ -88,20 +88,8 @@ server.on('listening', () => {
   console.log(chalk.cyan('-----------------------------------------------'));
   console.log(chalk.blue('💬 Discord: ') + chalk.underline(discord));
   console.log(chalk.cyan('-----------------------------------------------'));
-});
+})
 
-function shutdown(signal) {
-  console.log(chalk.bgRed.white.bold(`  Shutting Down (Signal: ${signal})  `) + '\n');
-  console.log(chalk.red('-----------------------------------------------'));
-  console.log(chalk.yellow('  🛑 Status: ') + chalk.bold('Shutting Down'));
-  console.log(chalk.yellow('  🕒 Time: ') + chalk.bold(new Date().toLocaleTimeString()));
-  console.log(chalk.red('-----------------------------------------------'));
-  console.log(chalk.blue('  Performing graceful exit...'));
-  server.close(() => {
-    console.log(chalk.blue('  Doge has been closed.'));
-    process.exit(0);
-  });
-}
 
 process.on('SIGTERM', () => shutdown('SIGTERM'));
 process.on('SIGINT', () => shutdown('SIGINT'));
