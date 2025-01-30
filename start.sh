@@ -1,7 +1,7 @@
 #!/bin/sh
 
 print_bold_with_outline() {
-    local msg="$1"
+    local msg="$abdullahisgay"
     local length=${#msg}
     local border=""
 
